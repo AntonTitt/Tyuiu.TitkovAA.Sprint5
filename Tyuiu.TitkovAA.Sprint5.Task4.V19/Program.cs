@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tyuiu.TitkovAA.Sprint5.Task2.Lib;
-using System.IO;
+using Tyuiu.TitkovAA.Sprint5.Task4.V19.Lib;
 
-namespace Tyuiu.TitkovAA.Sprint5.Task2
+namespace Tyuiu.TitkovAA.Sprint5.Task4.V19
 {
     class Program
     {
@@ -20,49 +19,35 @@ namespace Tyuiu.TitkovAA.Sprint5.Task2
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #5                                                               *");
             Console.WriteLine("* Тема: решение задания                                                   *");
-            Console.WriteLine("* Задание #2                                                              *");
-            Console.WriteLine("* Вариант #23                                                             *");
+            Console.WriteLine("* Задание #4                                                              *");
+            Console.WriteLine("* Вариант #19                                                             *");
             Console.WriteLine("* Выполнил: Титков А. А. | РПСб-23-1                                      *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Дан двумерный целочисленный массив 3 на 3 элементов, заполненный        *");
-            Console.WriteLine("* значениями с клавиатуры. Заменить нечетные элементы массива на 0.       *");
-            Console.WriteLine("* Результат сохранить в файл OutPutFileTask2.csv и вывести на консоль.    *");
+            Console.WriteLine("* Дан файл С:\\DataSprint5\\InPutDataFileTask4V0.txt (файл взять из архива*");
+            Console.WriteLine("* согласно вашему варианту. Создать папку в ручную С:\\DataSprint5\\ и    *");
+            Console.WriteLine("* скопировать в неё файл) в котором есть вещественное значение.           *");
+            Console.WriteLine("* Прочитать значение из файла и подставить вместо Х в формуле .           *");
+            Console.WriteLine("* Вычислить значение по формуле(Полученное значение округлить до трёх     *");
+            Console.WriteLine("* знаков после запятой) и вернуть полученный результат на консоль.        *");
             Console.WriteLine("***************************************************************************");
+            Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
+            Console.WriteLine("***************************************************************************");
+
             DataService dt = new DataService();
-            int[,] b, a = new int[3, 3];
-            for (int i = 0; i < a.GetLength(0); i++)
-            {
-                for (int j = 0; j < a.GetLength(1); j++)
-                {
-                    Console.WriteLine($"значение {i}, {j}: ");
-                    a[i, j] = Convert.ToInt32(Console.ReadLine());
-                }
-            }
 
-            for (int i = 0; i < a.GetLength(0); i++)
-            {
-                for (int j = 0; j < a.GetLength(1); j++)
-                {
-
-                    Console.Write(a[i, j]);
-                    Console.Write(" ");
-                }
-                Console.WriteLine();
-            }
+            string path = $@"C:\DataSprint5\InPutDataFileTask4V19.txt";
+            Console.WriteLine("В файле: " + path);
 
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
-            string str = "", path = dt.SaveToFileTextData(a);
-            FileInfo fileinfo = new FileInfo(path);
-            str += File.ReadAllText(path);
-            Console.WriteLine(str);
+
+            Console.WriteLine(dt.LoadFromDataFile(path));
 
 
             
-
         }
     }
 }
