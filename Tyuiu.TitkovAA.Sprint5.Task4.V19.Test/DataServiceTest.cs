@@ -22,6 +22,7 @@ namespace Tyuiu.TitkovAA.Sprint5.Task4.V19.Test
             DataService dt = new DataService();
             
             string path = $@"C:\DataSprint5\InPutDataFileTask4V19.txt";
+
             double y = dt.LoadFromDataFile(path);
             
             Assert.AreEqual(y, 8.983);

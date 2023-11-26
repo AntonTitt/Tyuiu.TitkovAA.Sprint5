@@ -37,6 +37,7 @@ namespace Tyuiu.TitkovAA.Sprint5.Task4.V19
             DataService dt = new DataService();
 
             string path = $@"C:\DataSprint5\InPutDataFileTask4V19.txt";
+
             Console.WriteLine("В файле: " + path);
 
 

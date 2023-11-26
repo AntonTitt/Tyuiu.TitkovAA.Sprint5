@@ -12,7 +12,7 @@ namespace Tyuiu.TitkovAA.Sprint5.Task4.V19.Lib
     {
         public double LoadFromDataFile(string path)
         {
-            string a = ".";
+            
             double str = Convert.ToDouble((File.ReadAllText(path)));
 
             return Math.Round(Math.Pow((str / Math.Cos(str)), 2), 3);
